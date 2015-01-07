@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>first note for Haskell learning | Lixin&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="It’s pretty boring to stay at home during winter holiday and I consider it a great time for picking up some interesting topics. I have heard of functional programming long before but not have any chan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="first note for Haskell learning">
+<meta property="og:url" content="http://yoursite.com/2015/01/07/first-note-for-Haskell-learning/">
+<meta property="og:site_name" content="Lixin's blog">
+<meta property="og:description" content="It’s pretty boring to stay at home during winter holiday and I consider it a great time for picking up some interesting topics. I have heard of functional programming long before but not have any chan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="first note for Haskell learning">
+<meta name="twitter:description" content="It’s pretty boring to stay at home during winter holiday and I consider it a great time for picking up some interesting topics. I have heard of functional programming long before but not have any chan">
+<meta name="twitter:creator" content="@true">
+<link rel="publisher" href="true">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Lixin&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58220124-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Lixin&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">record of an outsider&#39;s world</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-first-note-for-Haskell-learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/07/first-note-for-Haskell-learning/" class="article-date">
+  <time datetime="2015-01-07T09:54:56.000Z" itemprop="datePublished">Jan 7 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/knowledge/">knowledge</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      first note for Haskell learning
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>It’s pretty boring to stay at home during winter holiday and I consider it a great time for picking up some interesting topics. I have heard of functional programming long before but not have any chance to dive into it. Some genius friends always told me how wonderful Haskell is like black magic and I think now is the time to learn it. Just out of curiosity I follow the online tutorial and decide to record some of my notes and digest on this blog. It just serves as a reminder for myself to keep working on it, not intend to be another full tutorial. Big Thanks to the <a href="http://learnyouahaskell.com/chapters" target="_blank" rel="external">excellent online tutorial</a></em></p>
+<h3 id="Let’s_start!_">Let’s start!  <a id="more"></a></h3>
+<p>After installing the Haskell platform the journey just begins. I will only record those information which I think is interesting.</p>
+<p>The command line is just as usual. The way it call a function is like:</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> (succ <span class="number">9</span>) + (max <span class="number">5</span> <span class="number">4</span>) + <span class="number">1</span>  </span>
+<span class="number">16</span>
+</code></pre><p>List is a first data structure I learn. The way assignment happen in command line is again interesting:</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> let lostNumbers = [<span class="number">4</span>,<span class="number">8</span>,<span class="number">15</span>,<span class="number">16</span>,<span class="number">23</span>,<span class="number">42</span>]  </span>
+<span class="input"><span class="prompt">ghci&gt;</span> lostNumbers  </span>
+[<span class="number">4</span>,<span class="number">8</span>,<span class="number">15</span>,<span class="number">16</span>,<span class="number">23</span>,<span class="number">42</span>]
+</code></pre><p>Notice the let word. If the assignment happen in script, let have no need to appear.</p>
+<p>String is just a list of Char.</p>
+<p>++ for concat list, : for concat a single element with a list.</p>
+<p>The index operator is !!, seems quite bizare.</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> [<span class="number">9.4</span>,<span class="number">33.2</span>,<span class="number">96.2</span>,<span class="number">11.2</span>,<span class="number">23.25</span>] !! <span class="number">1</span>  </span>
+<span class="number">33.2</span>
+</code></pre><p>Some useful functions: head, tail, last, init, length, null, reverse, take, drop, sum, product, elem</p>
+<p>The syntax for usage of elem is also strange:</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> <span class="number">4</span> `elem` [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]  </span>
+<span class="input"><span class="prompt">True  
+ghci&gt;</span> <span class="number">10</span> `elem` [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]  </span>
+<span class="constant">False</span> 
+</code></pre><p>Notice the ‘`’symbol. </p>
+<p>It also has support for range operation, which reminds me of Python. </p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> [<span class="number">1</span>..<span class="number">20</span>]  </span>
+[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>,<span class="number">17</span>,<span class="number">18</span>,<span class="number">19</span>,<span class="number">20</span>] 
+</code></pre><p>For step, just add one more element:</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> [<span class="number">2</span>,<span class="number">4</span>..<span class="number">20</span>]  </span>
+<span class="input"><span class="prompt">[2,4,6,8,10,12,14,16,18,20]  
+ghci&gt;</span> [<span class="number">3</span>,<span class="number">6</span>..<span class="number">20</span>]  </span>
+[<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">12</span>,<span class="number">15</span>,<span class="number">18</span>] 
+</code></pre><p>Never use float with step range.</p>
+<p>Haskell is lazy, it’s ok to generate a infinite list and only use take to take some of them:</p>
+<pre><code><span class="tag">take</span> 24 <span class="attr_selector">[13,26..]</span>
+</code></pre><p>List comprehension reminds me of the map and filter function in Python</p>
+<p>Some interesting example:</p>
+<pre><code><span class="title">length'</span> xs = sum [<span class="number">1</span> | _ &lt;- xs]
+<span class="title">ghci</span>&gt; [ x*y | x &lt;- [<span class="number">2</span>,<span class="number">5</span>,<span class="number">10</span>], y &lt;- [<span class="number">8</span>,<span class="number">10</span>,<span class="number">11</span>], x*y &gt;<span class="number">50</span>]      [<span class="number">55</span>,<span class="number">80</span>,<span class="number">100</span>,<span class="number">110</span>]  
+</code></pre><p>Tuple is also a familiar concept in Python. In Haskell, it’s more strict than list. You must know the number of elements and the type in advance. The elements don’t need to be of the same type.</p>
+<p>zip also presents in Python:</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> zip [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>] [<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>]  </span>
+[(<span class="number">1</span>,<span class="number">5</span>),(<span class="number">2</span>,<span class="number">5</span>),(<span class="number">3</span>,<span class="number">5</span>),(<span class="number">4</span>,<span class="number">5</span>),(<span class="number">5</span>,<span class="number">5</span>)]
+</code></pre><p>The result is a list of tuple.</p>
+<p>See below for a problem, which right triangle that has integers for all sides and all sides equal to or smaller than 10 has a perimeter of 24? </p>
+<pre><code>ghci&gt; <span class="keyword">let</span> rightTriangles' = [ (a,b,<span class="built_in">c</span>) | <span class="built_in">c</span> &lt;- [<span class="number">1</span>..<span class="number">10</span>], b &lt;- [<span class="number">1</span>..<span class="built_in">c</span>], a &lt;- [<span class="number">1</span>..b], a^<span class="number">2</span> + b^<span class="number">2</span> == <span class="built_in">c</span>^<span class="number">2</span>, a+b+<span class="built_in">c</span> == <span class="number">24</span>]  
+ghci&gt; rightTriangles'  
+[(<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>)]
+</code></pre><p>That’s the basic of Chapter 1. </p>
+<h3 id="Chapter_2">Chapter 2</h3>
+<p>Chapter 2 introduce the type and typeclass. Haskell is strictly static type system. The type of every expression is known at compile time.</p>
+<p>To see the type of an expression, use :t</p>
+<p>Function also has type.</p>
+<pre><code><span class="bullet">removeNonUppercase :: </span>[Char] -&gt; [Char]  
+removeNonUppercase st = [ c | c &lt;- st, c <span class="smartquote">`elem` ['</span>A'..<span class="emphasis">'Z'</span>]]
+</code></pre><p>Several parameters:</p>
+<pre><code>addThree :: <span class="keyword">Int</span> -&gt; <span class="keyword">Int</span> -&gt; <span class="keyword">Int</span> -&gt; <span class="keyword">Int</span>  
+addThree x y z = x + y + z 
+</code></pre><p>Many functions are polymophics, the type of that kind of functions use type variable. Like:</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> <span class="symbol">:t</span> fst  </span>
+<span class="input"><span class="prompt">fst :: (a, b) -&gt;</span> a </span>
+</code></pre><p>Typeclass is a new concept, I think it’s easier to accept it like the interface in Java. Eq is a typeclass. Everything before the =&gt; symbol is called a class constraint. We can read the type declaration like this: the equality function takes any two values that are of the same type and returns a Bool. The type of those two values must be a member of the Eq class (this was the class constraint).</p>
+<pre><code>ghci&gt; :t (==)  
+<span class="function"><span class="params">(==)</span> :: <span class="params">(Eq a)</span> =&gt;</span> a<span class="function"> -&gt;</span> a<span class="function"> -&gt;</span> Bool
+</code></pre><p>Some typeclass:</p>
+<p>Ord: for types have an ordering</p>
+<p>Show, Read</p>
+<p>Notice that for Read typeclass:</p>
+<pre><code>ghci&gt; :t read  
+read :: (Read a) =&gt; <span class="typename">String</span> -&gt; a 
+
+ghci&gt; read <span class="string">"4"</span>  
+&lt;interactive&gt;:<span class="number">1</span>:<span class="number">0</span>:  
+    Ambiguous <span class="keyword">type</span> <span class="keyword">variable</span> `a' <span class="keyword">in</span> the constraint:  
+      `Read a' arising from a <span class="keyword">use</span> <span class="keyword">of</span> `read' at &lt;interactive&gt;:<span class="number">1</span>:<span class="number">0</span>-<span class="number">7</span>  
+    Probable fix: add a <span class="keyword">type</span> signature that fixes these <span class="keyword">type</span> <span class="keyword">variable</span>(s)
+</code></pre><p>Error happens because it doesn’t know which type ‘4’ should be, because in read type def, a is a type variable, and not specific context specify the type of ‘4’.</p>
+<p>We can specifically tell the compiler the type of ‘5’.</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> read <span class="string">"5"</span> <span class="symbol">:</span><span class="symbol">:</span> <span class="constant">Int</span>  </span>
+<span class="number">5</span>  
+</code></pre><p>Maxbound and minbound can be used for bounded members.</p>
+<pre><code>ghci&gt; :t (*)  
+<span class="function"><span class="params">(*)</span> :: <span class="params">(Num a)</span> =&gt;</span> a<span class="function"> -&gt;</span> a<span class="function"> -&gt;</span> a
+
+ghci&gt; :t fromIntegral
+fromIntegral :: <span class="function"><span class="params">(Num b, Integral a)</span> =&gt;</span> a<span class="function"> -&gt;</span> b
+</code></pre><p>the length function return a Int, not num, which could not be used with float. fromIntegral can be used to make that happen.</p>
+<pre><code><span class="input"><span class="prompt">ghci&gt;</span> fromIntegral (length [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]) + <span class="number">3.2</span></span>
+<span class="number">7.2</span>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/07/first-note-for-Haskell-learning/" data-id="qtha4e1ak171bm59" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Haskell/">Haskell</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/01/05/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">test</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/knowledge/">knowledge</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Haskell/">Haskell</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Haskell/" style="font-size: NaNpx;">Haskell</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/07/first-note-for-Haskell-learning/">first note for Haskell learning</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/05/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/05/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <div class="widget tag">
+<h3 class="title">Related Link</h3>
+<ul class="entry">
+<li><a href="https://github.com/Staniel" title="Github Profile">My Github</a></li>
+<li><a href="http://www.linkedin.com/pub/lixin-yao/65/aa7/290/" title="LinkedIn Profile">My LinkedIn Profile</a></li>
+</ul>
+</div>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Lixin Yao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58220124-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+
+</body>
+</html>
