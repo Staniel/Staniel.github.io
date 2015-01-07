@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/01/07/second-note-function-syntax/</loc>
+    <lastmod>2015-01-07T15:29:45.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/01/07/first-note-for-Haskell-learning/</loc>
     <lastmod>2015-01-07T09:59:05.000Z</lastmod>
   </url>
