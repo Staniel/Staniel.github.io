@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/01/29/some-insight-about-different-qsort-implementation/</loc>
+    <lastmod>2015-01-30T02:56:07.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/01/07/second-note-function-syntax/</loc>
     <lastmod>2015-01-07T15:29:45.000Z</lastmod>
   </url>
