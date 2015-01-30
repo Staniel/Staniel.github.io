@@ -143,7 +143,7 @@
 }
 </code></pre><p>The tricky part is that when scan through the equal element, we don’t just pass it, but instead, switch it as if it should not be here. By this way, if the whole array are all the same, then the dividing point will be in the middle, instead of leading or tailing position. So the algorithm is still O(nlogn).</p>
 <p>I test it with the one way scan version qsort, and the result is:</p>
-<p>for equal array:</p>
+<p>for equal array: (time in milliseconds)</p>
 <table>
 <thead>
 <tr>
@@ -195,8 +195,8 @@
 <thead>
 <tr>
 <th style="text-align:left">Data size</th>
-<th style="text-align:center">one way scan qsort</th>
-<th style="text-align:right">two way scan qsort</th>
+<th style="text-align:center">one way qsort time</th>
+<th style="text-align:right">two way scan qsort time</th>
 </tr>
 </thead>
 <tbody>
