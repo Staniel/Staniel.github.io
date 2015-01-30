@@ -6,20 +6,17 @@
   <title>some insight about different qsort implementation | Lixin&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="As I am reading Programming Pearls recently, I find an interesting topic about quick sort. 
-How to resolve the O(n2) time of quick sort when all the data or most data are equal?
-A tricky solution is u">
+How to resolve the O(n2) time of quick sort when all the data or most data are equal?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="some insight about different qsort implementation">
 <meta property="og:url" content="http://yoursite.com/2015/01/29/some-insight-about-different-qsort-implementation/">
 <meta property="og:site_name" content="Lixin's blog">
 <meta property="og:description" content="As I am reading Programming Pearls recently, I find an interesting topic about quick sort. 
-How to resolve the O(n2) time of quick sort when all the data or most data are equal?
-A tricky solution is u">
+How to resolve the O(n2) time of quick sort when all the data or most data are equal?">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="some insight about different qsort implementation">
 <meta name="twitter:description" content="As I am reading Programming Pearls recently, I find an interesting topic about quick sort. 
-How to resolve the O(n2) time of quick sort when all the data or most data are equal?
-A tricky solution is u">
+How to resolve the O(n2) time of quick sort when all the data or most data are equal?">
 <meta name="twitter:creator" content="@true">
 <link rel="publisher" href="true">
 
@@ -117,6 +114,8 @@ A tricky solution is u">
       
         <p>As I am reading Programming Pearls recently, I find an interesting topic about quick sort. </p>
 <h4 id="How_to_resolve_the_O(n2)_time_of_quick_sort_when_all_the_data_or_most_data_are_equal?">How to resolve the O(n2) time of quick sort when all the data or most data are equal?</h4>
+<a id="more"></a>
+
 <p>A tricky solution is using a two way scan version of divide function. Actually I learned this version of quicksort at first in junior year data structure course, but after I found out the one way scan version, I switch to the one way and abandon the old one because it’s easier to implement and memorize. It seems there do exist some reasons that it appear in our textbook.</p>
 <p>The divide function code of two way scan is as following:</p>
 <pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divide2</span>(<span class="keyword">int</span> A[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)
@@ -152,8 +151,8 @@ A tricky solution is u">
 <thead>
 <tr>
 <th style="text-align:left">Data size</th>
-<th style="text-align:center">one way scan qsort</th>
-<th style="text-align:right">two way scan qsort</th>
+<th style="text-align:center">one way qsort time</th>
+<th style="text-align:right">two way qsort time</th>
 </tr>
 </thead>
 <tbody>

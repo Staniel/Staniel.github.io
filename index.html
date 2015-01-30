@@ -113,122 +113,12 @@
       
         <p>As I am reading Programming Pearls recently, I find an interesting topic about quick sort. </p>
 <h4 id="How_to_resolve_the_O(n2)_time_of_quick_sort_when_all_the_data_or_most_data_are_equal?">How to resolve the O(n2) time of quick sort when all the data or most data are equal?</h4>
-<p>A tricky solution is using a two way scan version of divide function. Actually I learned this version of quicksort at first in junior year data structure course, but after I found out the one way scan version, I switch to the one way and abandon the old one because it’s easier to implement and memorize. It seems there do exist some reasons that it appear in our textbook.</p>
-<p>The divide function code of two way scan is as following:</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divide2</span>(<span class="keyword">int</span> A[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)
-{
-    <span class="keyword">int</span> l = low, h = high, target = A[high];
-    <span class="keyword">while</span> (l &lt; h)
-    {
-        <span class="keyword">while</span> (l &lt; h &amp;&amp; A[l] &lt; target) l++;
-        <span class="keyword">if</span> (l &lt; h) A[h--] = A[l];
-        <span class="keyword">while</span> (l &lt; h &amp;&amp; A[h] &gt; target) h--;
-        <span class="keyword">if</span> (l &lt; h) A[l++] = A[h];
-    }
-    A[l] = target;
-    <span class="keyword">return</span> l;
-} 
-</code></pre><p>The divide function code of two way scan is as following:</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divide1</span>(<span class="keyword">int</span> A[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)
-{
-    <span class="keyword">int</span> target = A[high];
-    <span class="keyword">int</span> i = low-<span class="number">1</span>;
-    <span class="keyword">for</span> (<span class="keyword">int</span> j = low; j&lt; high;j++)
-    {
-        <span class="keyword">if</span> (A[j] &lt; target)
-            swap(A, ++i, j);
-    }
-    swap(A, i+<span class="number">1</span>, high);
-    <span class="keyword">return</span> i+<span class="number">1</span>;
-}
-</code></pre><p>The tricky part is that when scan through the equal element, we don’t just pass it, but instead, switch it as if it should not be here. By this way, if the whole array are all the same, then the dividing point will be in the middle, instead of leading or tailing position. So the algorithm is still O(nlogn).</p>
-<p>I test it with the one way scan version qsort, and the result is:</p>
-<p>for equal array: (time in milliseconds)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Data size</th>
-<th style="text-align:center">one way scan qsort</th>
-<th style="text-align:right">two way scan qsort</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">100</td>
-<td style="text-align:center">0</td>
-<td style="text-align:right">0</td>
-</tr>
-<tr>
-<td style="text-align:left">500</td>
-<td style="text-align:center">2</td>
-<td style="text-align:right">0</td>
-</tr>
-<tr>
-<td style="text-align:left">1000</td>
-<td style="text-align:center">3</td>
-<td style="text-align:right">0</td>
-</tr>
-<tr>
-<td style="text-align:left">3000</td>
-<td style="text-align:center">10</td>
-<td style="text-align:right">1</td>
-</tr>
-<tr>
-<td style="text-align:left">10000</td>
-<td style="text-align:center">125</td>
-<td style="text-align:right">2</td>
-</tr>
-<tr>
-<td style="text-align:left">30000</td>
-<td style="text-align:center">stackoverflow</td>
-<td style="text-align:right">5</td>
-</tr>
-<tr>
-<td style="text-align:left">100000</td>
-<td style="text-align:center">s.o.</td>
-<td style="text-align:right">14</td>
-</tr>
-</tbody>
-</table>
-<p>For almost equal array (containing only 0 to 9):</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Data size</th>
-<th style="text-align:center">one way qsort time</th>
-<th style="text-align:right">two way scan qsort time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">100</td>
-<td style="text-align:center">0</td>
-<td style="text-align:right">0</td>
-</tr>
-<tr>
-<td style="text-align:left">1000</td>
-<td style="text-align:center">1</td>
-<td style="text-align:right">0</td>
-</tr>
-<tr>
-<td style="text-align:left">10000</td>
-<td style="text-align:center">11</td>
-<td style="text-align:right">2</td>
-</tr>
-<tr>
-<td style="text-align:left">50000</td>
-<td style="text-align:center">67</td>
-<td style="text-align:right">9</td>
-</tr>
-<tr>
-<td style="text-align:left">100000</td>
-<td style="text-align:center">200</td>
-<td style="text-align:right">20</td>
-</tr>
-</tbody>
-</table>
-<p>BTW, I seriously think I should resume the algorithm coding practice even though there’s still half a year left for full time job hunting process. I feel like an idiot when writing the qsort functions, keep making bugs everywhere. So sad.</p>
 
+        
+          <p class="article-more-link">
+            <a href="/2015/01/29/some-insight-about-different-qsort-implementation/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
